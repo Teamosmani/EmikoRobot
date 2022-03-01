@@ -104,8 +104,9 @@ async def logo_gen(event):
     )
     x = (image_width - w) / 2
     y = (image_height - h) / 2
-    draw.text((x, y), name, font=font, fill="white",
-              stroke_width=strke, stroke_fill="black")
+    draw.text(
+        (x, y), name, font=font, fill="white", stroke_width=strke, stroke_fill="black"
+    )
     flnme = f"logo.png"
     img.save(flnme, "png")
     await xx.edit("`Uploading`")
@@ -119,7 +120,7 @@ async def logo_gen(event):
         os.remove(flnme)
         await xx.delete()
     if os.path.exists(bg_):
-        os.remove(bg_) 
+        os.remove(bg_)
     if os.path.exists(font_):
         if not font_.startswith("./EmikoRobot/resources/fonts"):
             os.remove(font_)
@@ -130,7 +131,9 @@ async def logo_(event):
     xx = await event.reply("`Preparing your logo...`")
     name = event.pattern_match.group(1)
     if not name:
-        await xx.edit("`Provide some text to draw!\nExample: /wlogo <your name>!`/wlogo Osmani")
+        await xx.edit(
+            "`Provide some text to draw!\nExample: /wlogo <your name>!`/wlogo Osmani"
+        )
         return
     bg_, font_ = "", ""
     if event.reply_to_msg_id:
@@ -187,8 +190,9 @@ async def logo_(event):
     )
     x = (image_width - w) / 2
     y = (image_height - h) / 2
-    draw.text((x, y), name, font=font, fill="white",
-              stroke_width=strke, stroke_fill="black")
+    draw.text(
+        (x, y), name, font=font, fill="white", stroke_width=strke, stroke_fill="black"
+    )
     flnme = f"logo.png"
     img.save(flnme, "png")
     await xx.edit("`Uploading`")
@@ -202,7 +206,7 @@ async def logo_(event):
         os.remove(flnme)
         await xx.delete()
     if os.path.exists(bg_):
-        os.remove(bg_) 
+        os.remove(bg_)
     if os.path.exists(font_):
         if not font_.startswith("./EmikoRobot/resources/fonts"):
             os.remove(font_)
