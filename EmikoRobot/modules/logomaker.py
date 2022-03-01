@@ -63,7 +63,7 @@ async def logo_gen(event):
     else:
         pics = []
         async for i in ubot2.iter_messages(
-            "@KenLogopack", filter=InputMessagesFilterPhotos
+            "@osmanilogo", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -73,7 +73,7 @@ async def logo_gen(event):
     if not bg_:
         pics = []
         async for i in ubot2.iter_messages(
-            "@KenLogopack", filter=InputMessagesFilterPhotos
+            "@osmanilogo", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -113,7 +113,7 @@ async def logo_gen(event):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption="Logo by [Emiko Robot](https://t.me/EmiexRobot)",
+            caption="Logo Maked by [Osmani Logo Maker](https://t.me/osmanilogo)",
             force_document=False,
         )
         os.remove(flnme)
@@ -130,7 +130,7 @@ async def logo_(event):
     xx = await event.reply("`Preparing your logo...`")
     name = event.pattern_match.group(1)
     if not name:
-        await xx.edit("`Provide some text to draw!\nExample: /wlogo <your name>!`")
+        await xx.edit("`Provide some text to draw!\nExample: /wlogo <your name>!`/wlogo Osmani")
         return
     bg_, font_ = "", ""
     if event.reply_to_msg_id:
@@ -146,7 +146,7 @@ async def logo_(event):
     else:
         pics = []
         async for i in ubot2.iter_messages(
-            "@kenlogopack", filter=InputMessagesFilterPhotos
+            "@osmanilogo", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -156,7 +156,7 @@ async def logo_(event):
     if not bg_:
         pics = []
         async for i in ubot2.iter_messages(
-            "@kenlogopack", filter=InputMessagesFilterPhotos
+            "@osmanilogo", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -196,7 +196,7 @@ async def logo_(event):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption="Logo by [Emiko Robot](https://t.me/EmiexRobot)",
+            caption="Logo Designed by [Osmani Logo Maker](https://t.me/osmanilogo)",
             force_document=False,
         )
         os.remove(flnme)
@@ -215,7 +215,7 @@ __help__ = """ This is help menu for logomaker
 ❂ /logo <text/name> - Create a logo with random view.
 ❂ /wlogo <text/name> - Create a logo with wide view only.
 
- Image Editor :
+ Image Editor By @osmanilogo :
 
 ❂  /edit <reply photo> - to edit image.
 """
